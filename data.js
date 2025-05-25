@@ -316,11 +316,10 @@ export const appData = {
     "C4.2 (Suivre la gestion économique d’un projet)": {
       "etreCapable": "Suivre l’évolution des coûts et des dépenses. Mettre à jour les tableaux de suivi financier. Analyser les écarts et proposer des actions correctives. Préparer les demandes de règlement et les situations de travaux.",
       "conditionsRessources": "Devis, factures, tableaux de suivi financier, logiciels de comptabilité, outils de bureautique (Excel).",
-      "criteresEvaluation": "Les postes de dépenses et de recettes sont identifiés. L’évolution des coûts est suivie rigoureusement. Les tableaux de suivi financier sont à jour. Les écarts sont analysés et des actions corrosives sont proposées. Les demandes de règlement sont préparées correctement."
+      "criteresEvaluation": "Les postes de dépenses et de recettes sont identifiés. L’évolution des coûts est suivie rigoureusement. Les tableaux de suivi financier sont à jour. Les écarts sont analysés et des actions correctives sont proposées. Les demandes de règlement sont préparées correctement."
     },
     "C4.3 (Vérifier la conformité de l’ouvrage et des prestations)": {
-      "etreCapable": "Vérifier le respect des procédures administratives. Repérer et analyser les non-conformités. Contrôler le respect des règles de l’art et des tolérances. Vérifier la traçabilité des interventions. Établir les documents de suivi.",
-      "conditionsRessources": "Pièces constitutives du marché, Normes, DTU et Avis techniques, Documents de labellisation ou de certification, Fiches techniques et notices d’utilisation, Rapports de contrôle, Dossier d’intervention ultérieure sur l’ouvrage (DIUO).",
+      "etreCapable": "Vérifier le respect des procédures administratives. Repérer et analyser les non-conformités. Contrôler le respect des règles de l’art et des tolérances. Vérifier la traçabilité des interventions. Établir les documents de suivi.\",\r\n      \"conditionsRessources\": \"Pièces constitutives du marché, Normes, DTU et Avis techniques, Documents de labellisation ou de certification, Fiches techniques et notices d’utilisation, Rapports de contrôle, Dossier d’intervention ultérieure sur l’ouvrage (DIUO).",
       "criteresEvaluation": "Les erreurs ou manquements sont signalés. Les non-conformités sont clairement exposées. Les méthodes et outils de contrôle sont pertinents. Le bon achèvement est vérifié. Tous les aléas liés aux malfaçons ou désordres émergents sont pris en compte."
     }
   },

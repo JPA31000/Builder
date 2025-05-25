@@ -30,7 +30,7 @@ const summaryRessourceOnDonne = document.getElementById('summary-ressource-on-do
 const generatePdfProfBtn = document.getElementById('generate-pdf-prof');
 const generatePdfEleveBtn = document.getElementById('generate-pdf-eleve');
 const saveSessionBtn = document.getElementById('save-session');
-const loadSessionBtn = document.getElementById('load-session'); // Ce bouton ne sera plus utilisé directement
+const loadSessionBtn = document.getElementById('load-session'); // Ce bouton ne sera plus utilisé directement (l'historique gère le chargement)
 const exportJsonBtn = document.getElementById('export-json');
 const importJsonInput = document.getElementById('import-json');
 const triggerImportJsonBtn = document.getElementById('trigger-import-json');
@@ -373,7 +373,7 @@ function renderHistorique() {
 // --- Fonctions d'exportation/importation JSON ---
 
 function exportToJson() {
-    if (!currentSession.phase && !currentSession.activite && !currentSession.session) {
+    if (!currentSession.phase && !currentSession.activite && !currentSession.tache) {
         alert("Aucune session à exporter. Veuillez sélectionner des critères ou charger une session.");
         return;
     }
@@ -486,7 +486,7 @@ generatePdfProfBtn.addEventListener('click', () => {
         alert("Veuillez sélectionner au moins une Phase, une Activité et une Tâche pour générer le PDF Professeur.");
         return;
     }
-    generatePdfForProf(currentSession, currentSession.competenceDetails); // Passe les détails de la compétence
+    generatePdfForProf(currentSession); // currentSession contient déjà competenceDetails si sélectionné
 });
 
 generatePdfEleveBtn.addEventListener('click', () => {
