@@ -1,0 +1,385 @@
+/* css/style.css */
+
+/* --- Variables CSS pour les couleurs --- */
+:root {
+    --primary-blue: #2c3e50; /* Bleu foncé pour l'en-tête, fond des cards */
+    --secondary-blue: #3498db; /* Bleu plus clair pour les accents, boutons */
+    --light-grey: #ecf0f1; /* Gris très clair pour le fond de la page */
+    --medium-grey: #bdc3c7; /* Gris moyen pour les bordures, séparateurs */
+    --dark-grey: #7f8c8d; /* Gris foncé pour les textes secondaires */
+    --text-color: #2c3e50; /* Couleur principale du texte */
+    --white: #ffffff; /* Blanc pur */
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-medium: rgba(0, 0, 0, 0.2);
+    --success-green: #27ae60;
+    --error-red: #e74c3c;
+}
+
+/* --- Base et Réinitialisation --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--light-grey);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* --- Header --- */
+header {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 20px 0;
+    box-shadow: 0 4px 8px var(--shadow-medium);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Permet aux éléments de s'enrouler sur les petits écrans */
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* Espace entre le logo et le titre */
+    padding: 10px 0;
+}
+
+header .logo {
+    height: 60px; /* Taille du logo */
+    width: auto;
+}
+
+header h1 {
+    font-size: 1.8em;
+    margin: 0;
+    flex-shrink: 0; /* Empêche le titre de rétrécir au-delà de son contenu */
+}
+
+/* --- Main Content & Cards --- */
+main {
+    flex-grow: 1;
+    padding-bottom: 40px; /* Espace sous le contenu avant le footer */
+}
+
+.card {
+    background-color: var(--white);
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px var(--shadow-light);
+}
+
+h2 {
+    color: var(--secondary-blue);
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--medium-grey);
+    padding-bottom: 10px;
+    font-size: 1.6em;
+}
+
+/* --- Formulaires de sélection --- */
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--dark-grey);
+}
+
+.form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--medium-grey);
+    border-radius: 6px;
+    background-color: var(--light-grey);
+    font-size: 1em;
+    color: var(--text-color);
+    appearance: none; /* Supprime le style par défaut du navigateur */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%232c3e50%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13.2-6.5h-258a17.6%2017.6%200%200%200-13.2%206.5%2017.6%2017.6%200%200%200%200%2022.9l128.4%20127.9c4.8%204.9%2011.8%207.7%2019%207.7s14.2-2.8%2019-7.7L287%2092.3a17.6%2017.6%200%200%200%200-22.9z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group select:focus {
+    border-color: var(--secondary-blue);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3);
+}
+
+.form-group select:disabled {
+    background-color: #e0e6e7;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* --- Section Détails Compétence --- */
+.competence-details-section {
+    background-color: var(--light-grey);
+    border-left: 5px solid var(--secondary-blue);
+    padding: 15px 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.competence-details-section h3 {
+    color: var(--primary-blue);
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.competence-details-section p {
+    margin-bottom: 8px;
+    font-size: 0.95em;
+    color: var(--dark-grey);
+}
+
+.competence-details-section p strong {
+    color: var(--text-color);
+}
+
+
+/* --- Résumé de la Séance --- */
+.summary-content {
+    background-color: var(--light-grey);
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 25px;
+    border: 1px dashed var(--medium-grey);
+}
+
+.summary-content p {
+    margin-bottom: 8px;
+    font-size: 0.95em;
+}
+
+.summary-content p strong {
+    color: var(--primary-blue);
+}
+
+/* --- Boutons d'action --- */
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+    justify-content: center; /* Centrer les boutons sur mobile */
+}
+
+.actions button {
+    background-color: var(--secondary-blue);
+    color: var(--white);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    flex-grow: 1; /* Permet aux boutons de prendre plus d'espace */
+    max-width: 250px; /* Limite la largeur des boutons */
+    text-align: center;
+}
+
+.actions button:hover {
+    background-color: #2980b9; /* Teinte plus foncée */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px var(--shadow-medium);
+}
+
+.actions button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px var(--shadow-light);
+}
+
+/* Styles spécifiques pour certains boutons */
+#save-session {
+    background-color: var(--success-green);
+}
+#save-session:hover {
+    background-color: #229954;
+}
+
+#clear-selections {
+    background-color: var(--error-red);
+}
+#clear-selections:hover {
+    background-color: #c0392b;
+}
+
+
+/* --- Historique des Séances --- */
+#historique-list {
+    list-style: none;
+    padding: 0;
+}
+
+.historique-item {
+    background-color: var(--white);
+    border: 1px solid var(--medium-grey);
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column; /* Stack vertically on small screens */
+    gap: 10px;
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.historique-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.historique-item-info span {
+    display: block; /* Chaque info sur sa propre ligne */
+    font-size: 0.9em;
+    color: var(--text-color);
+    margin-bottom: 3px;
+}
+
+.historique-item-info strong {
+    color: var(--primary-blue);
+}
+
+.historique-item-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end; /* Aligner les boutons à droite */
+    margin-top: 10px; /* Espace au-dessus des boutons d'action */
+}
+
+.historique-item-actions button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85em;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.load-historique-btn {
+    background-color: var(--secondary-blue);
+    color: var(--white);
+}
+
+.load-historique-btn:hover {
+    background-color: #2980b9;
+}
+
+.delete-historique-btn {
+    background-color: var(--error-red);
+    color: var(--white);
+}
+
+.delete-historique-btn:hover {
+    background-color: #c0392b;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto; /* Pousse le footer en bas de la page */
+    box-shadow: 0 -4px 8px var(--shadow-medium);
+}
+
+footer p {
+    font-size: 0.9em;
+    margin: 0;
+}
+
+
+/* --- Responsive Design (Mobile-first) --- */
+
+/* Pour les écrans plus larges que 600px (tablettes et petits ordinateurs) */
+@media (min-width: 600px) {
+    header h1 {
+        font-size: 2.2em;
+    }
+
+    .card {
+        padding: 30px;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .actions {
+        justify-content: flex-start; /* Aligne les boutons à gauche */
+    }
+
+    .actions button {
+        flex-grow: 0; /* Ne pas étirer les boutons */
+        max-width: none; /* Supprime la limite de largeur sur les écrans plus grands */
+    }
+
+    .historique-item {
+        flex-direction: row; /* Layout horizontal */
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .historique-item-info span {
+        display: inline; /* Retourne en ligne */
+        margin-right: 15px; /* Espace entre les infos */
+        margin-bottom: 0;
+    }
+}
+
+/* Pour les écrans plus larges que 900px (ordinateurs de bureau) */
+@media (min-width: 900px) {
+    header .container {
+        justify-content: space-between; /* Logo à gauche, titre au centre, ou vice versa */
+    }
+
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    main.container {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Deux colonnes */
+        gap: 25px;
+        align-items: start; /* Alignement en haut */
+    }
+
+    #selection-section {
+        grid-column: 1 / 2; /* Prend la première colonne */
+    }
+
+    #summary-section {
+        grid-column: 2 / 3; /* Prend la deuxième colonne */
+    }
+
+    #historique-section {
+        grid-column: 1 / 3; /* S'étend sur les deux colonnes */
+    }
+}

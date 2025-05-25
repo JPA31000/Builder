@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concepteur de Séances Pédagogiques TEBAA</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="assets/logo-tebaa.png" alt="Logo TEBAA" class="logo">
+            <h1>Concepteur de Séances Pédagogiques TEBAA</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="selection-section" class="card">
+            <h2>Critères de la Séance</h2>
+
+            <div class="form-group">
+                <label for="select-phase">1. Sélectionner une Phase :</label>
+                <select id="select-phase"></select>
+            </div>
+
+            <div class="form-group">
+                <label for="select-activite">2. Sélectionner une Activité :</label>
+                <select id="select-activite" disabled></select>
+            </div>
+
+            <div class="form-group">
+                <label for="select-tache">3. Sélectionner une Tâche :</label>
+                <select id="select-tache" disabled></select>
+            </div>
+
+            <div class="form-group">
+                <label for="select-problematique">4. Sélectionner une Problématique :</label>
+                <select id="select-problematique" disabled></select>
+            </div>
+
+            <div class="form-group">
+                <label for="select-resultat-attendu">5. Sélectionner un Résultat attendu :</label>
+                <select id="select-resultat-attendu" disabled></select>
+            </div>
+
+            <div class="form-group">
+                <label for="select-competence-visee">6. Sélectionner une Compétence visée :</label>
+                <select id="select-competence-visee" disabled></select>
+            </div>
+
+            <div id="competence-details" class="competence-details-section" style="display: none;">
+                <h3>Détails de la Compétence</h3>
+                <p><strong>Être capable de :</strong> <span id="etre-capable-de">N/A</span></p>
+                <p><strong>Conditions et Ressources :</strong> <span id="conditions-ressources">N/A</span></p>
+                <p><strong>Critères d'Évaluation :</strong> <span id="criteres-evaluation">N/A</span></p>
+            </div>
+
+            <div class="form-group">
+                <label for="select-ressource-on-donne">7. Sélectionner une Ressource "On donne" :</label>
+                <select id="select-ressource-on-donne"></select>
+            </div>
+        </section>
+
+        <section id="summary-section" class="card">
+            <h2>Résumé de la Séance Actuelle</h2>
+            <div class="summary-content">
+                <p><strong>Phase :</strong> <span id="summary-phase">N/A</span></p>
+                <p><strong>Activité :</strong> <span id="summary-activite">N/A</span></p>
+                <p><strong>Tâche :</strong> <span id="summary-tache">N/A</span></p>
+                <p><strong>Problématique :</strong> <span id="summary-problematique">N/A</span></p>
+                <p><strong>Résultat attendu :</strong> <span id="summary-resultat-attendu">N/A</span></p>
+                <p><strong>Compétence visée :</strong> <span id="summary-competence-visee">N/A</span></p>
+                <p><strong>Ressource "On donne" :</strong> <span id="summary-ressource-on-donne">N/A</span></p>
+            </div>
+
+            <div class="actions">
+                <button id="generate-pdf-prof">Générer PDF (Professeur)</button>
+                <button id="generate-pdf-eleve">Générer PDF (Élève)</button>
+                <button id="save-session">Sauvegarder la séance</button>
+                <button id="load-session" style="display: none;">Charger une séance</button> <button id="export-json">Exporter en JSON</button>
+                <input type="file" id="import-json" accept=".json" style="display: none;">
+                <button id="trigger-import-json">Importer JSON</button>
+                <button id="clear-selections">Effacer les sélections</button>
+            </div>
+
+            <div id="historique-section" class="card">
+                <h2>Historique des Séances</h2>
+                <ul id="historique-list">
+                    </ul>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Concepteur de Séances Pédagogiques TEBAA. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="js/script.js"></script>
+</body>
+</html>
